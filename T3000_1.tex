@@ -7,8 +7,8 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{titlesec} 
-\titleformat{\chapter}{\bfseries\huge}{\thechapter.\quad}{0ex}{\vspace{0.1ex}}
-[\vspace{0.1ex}]%\rule{\textwidth}{0.3pt}]
+%\titleformat{\chapter}{\bfseries\huge}{\thechapter.\quad}{0ex}{\vspace{0.1ex}}
+%[\vspace{0.1ex}]%\rule{\textwidth}{0.3pt}]
 \author{Fabio Greco - Franziska Theis}
 
 \title{\includegraphics[scale=1]{Cover.png} \\
@@ -35,7 +35,7 @@ fa
 
  
 \chapter{Hardware-Komponenten des Magic Mirrors}
-fra
+Die folgende Grafik zeigt die Hardware-Komponenten, die es benötigt, um einen Magic Mirror zu bauen. Allerdings ist es nur ein Vorschlag und kann auch auf andere Weise realisiert werden. Zunächst wird die Steuereinheit des Magic Mirrors der Raspberry Pi vorgestellt. Danach werden die übrigen Hardware-Komponenten und deren Zusammensetzung zu einem Spiegel erläutert. 
 \begin{figure}[h]
 \hspace{-50pt}
 \includegraphics[scale=.5]{Bauteile.png} 
@@ -52,25 +52,21 @@ The Raspberry Pi Foundation’s mission is to put the power of digital making in
 Die Mission der Raspberry Pi Foundation ist es, die weitreichenden Möglichkeiten der Digitalisierung in die Hände der Menschen auf der ganzen Welt zu geben. Ein Teil dieser Strategie sind die kostenlosen Trainingsprogramme, die helfen, dieses wagemutige Mission zu erfüllen: Wir glauben jeder sollte die Möglichkeit haben, seine computertechnischen Fähigkeiten ausbauen zu können. (Zitat aus https://www.raspberrypi.org/training/)
 
 \section{Sonstige Komponenten -> anderer Name}
-Monitor VGA Adapter Spiegel für Prototyp
+
+Der wichtigste Bestandteil des Magic Mirrors ist der Spionagespiegel, wie er beispielsweise im Vernehmungssaal der Polizei verwendet wird: Die Außenseite spiegelt, sodass dunkle Objekte hinter dem Glas unsichtbar werden. Jedoch scheinen durch dieses Glas Lichtstrahlen eines Monitors hindurch. Damit der Spiegel zum Monitor passt, benötigt es genaue Maße, die den Spiegel teuer machen. Deshalb wird für den Prototyp auf eine Spiegelfolie zurückgegriffen, die auf ein Glas oder Plexiglas angebracht werden kann. Diese Folie ist nicht so hochwertig wie ein Spiegel und die Spiegelwirkung ist ebenfalls nicht gleichwertig. Allerdings ist diese Lösung sehr viel leichter und kann somit besser am Monitor angebracht werden, beziehungsweise an der Wand aufgehängt werden. 
+Der Monitor wird direkt hinter dem Spiegelmodell angebracht. --> wie?!?!?! Montage müssen wir noch ausprobieren
+Der Display Controller, in der Grafik grün dargestellt, ist bereits im Display und im Raspberry Pi verbaut, weswegen diese Teile nicht im Prototyp zu sehen sind. 
+Im Bestand stehen drei Monitore zur Verfügung, die unterschiedliche Größen haben (Hier Maße einfügen). Zunächst besteht natürlich der Fakt, dass ein größerer Monitor auch mehr Platz für Applikationen bietet. Allerdings wurde das Spiegelmodell auf die Maße der kleineren Monitore zugeschnitten, weshalb einer jener auch für den Prototyp verwendet wird. Der größere Monitor wird für den Prototyp der zweiten Studienarbeit im 6. Semester eingesetzt.
+Der verwendete Monitor von der Firma ?!?!!?!? aus dem Jahr ?!?!?! verfügt nur über einen VGA-Anschluss weswegen ein Adapter nötig ist, um ihn mit dem Raspberry Pi über ein HDMI-Kabel zu verbinden. 
+Umhüllt wird dieser Aufbau von einem breiten Bilderrahmen und einer Rückwand damit der Raspberry Pi geschützt ist. 
+Nachfolgend ein Bild vom Prototyp:
+
 \chapter{Software}
 \section{Betriebssystem}
 \subsection*{Magic Mirror}
 fra
-\subsection*{MagicMirror2}
-MagicMirror2 ist eine open soure platform für Entwickler von Smartmirror Spiegeln. Auf dieser Plattform können Anregungen für Projekte deren Umsetzung und installierbare Module frei zugänglich und offen diskutierbar ausgetauscht werden. MM$\circ{2}$ basiert auf einem Modul plug-in System, welches das Entwicklungstool Electron als sogennantes application wrapper nutzt 
-\subsubsection{Implementieren des MM Betriebssystems}
-Mit den neusten Updates des applicationsframework rund um MM ist es möglich einen Raspberry Pi 2 oder 3 zu nutzen. Für eine manuelle Installation müssen folgende befehle im Command Prompt ein:
- 
- \begin{itemize}
- \item adfhadföl
-	% \item git clone https://github.com/MichMich/MagicMirror
-	%\item cd ~/MagicMirror
-	%\item npm install \&\& npm start
- \end{itemize}
-\textbf{Erläuterung:}
-Zunächst wird die Reposetory des master branches\footnote{Hauptdatei des Magicmirrors} über einen Clonebefehl auf den Raspberry Pi geladen. Ist dieser Vorgang erfolgreich abgeschlossen worden, wechselt man in den nun neu erstellten Ordner und installiert und führt die Applikation mit dem Javascript zugehörigen Befehl npm aus 
-
+\subsection*{MagicMirror\^2}
+fa
 \subsection*{Mirr.OS}
 fa
 
@@ -83,13 +79,7 @@ Für die automatische Installation kann folgender Befehl in der Konsole des Pis 
 %\begin{lstlisting}
 %https://raw.githubusercontent.com/MichMich/MagicMirror/master/installers/raspberry.sh
 
-\section{Git}
-Bei einem Project andem mehrere Personen beteiligt sind und man gleichzeitig einige Dokumente configuriert, modifiziert oder ersetzt können erhebliche kompatibilitätsprobleme entstehen. Um solche Probleme garnicht erst entstehen zu lassen wird in diesem Projekt das Programm GIT verwendet, welches es ermöglcht jeglichen Kontent auf dem neuesten Stand zu halten. Im wesentlichen ist Git eine freie Software zur verteilten Versionsverwaltung von Dateien und speichert die zu einem Projekt zugehörigen files in einem online-repository, welches sowohl lokal aber auch publik genutzt und geteilt werden kann. Aufgrund dieser Eigenschaften entstanden in den letzten Jahren dieverse Communities die gemeinsam an öffentlichen Projekten gearbeitet haben. Eines dieser Projekt ist der MagicMirror. Alle Module Readme-Dateien und Commits(fühere Versionen) eines Moduls stehen auf Github frei zur Verfügung und ermöglichen einen einfachen Einstieg in die Welt des MagicMirrors.
-
-\subsection*{Der Einstieg in Git}
-Um eigene Projekt anzulegen und dessen Inhalt mit bestimmten Personen zu Teilen oder zu bearbeiten ist es notwendig sich auf einem der vielen Git-Repository Anbietern online zu registrieren. Die Community des in unserem Fall verwendeten Betriebssystem Magicmirror nutzt ausschließlich Github, weshalb im weiteren Verlauf Git und Github als synonyme verwendet werden. 
-\subsection{Module}
-Als Modul
+\section{Github}
 
 Fabio
 
@@ -101,14 +91,73 @@ Fa p fra j
 \subsection{Fitbit}
 \subsection{RSS Feeds}
 \subsection{Google Kalender}
+-> personalisierte Zeichen?!
 Fabio
 
-dann noch meine eigenen Module
+
 \section{badfg}
+Cocktails: https://github.com/mykle1/MMM-Cocktails
+VVS: https://github.com/niklaskappler/MMM-vvsDeparture
+Diashow: https://github.com/AdamMoses-GitHub/MMM-ImageSlideshow
+
+\subsection{VVS-Anzeige}
+"stationId": "5006017",
+"created": "2017-04-25T21:46:02.308483Z",
+"modified": "2017-04-25T21:46:02.308535Z",
+"name": "Erwin-Schoettle-Platz",
+"fullName": "Erwin-Schoettle-Platz"
+
+  "stationId": "5006056",
+"created": "2017-04-25T21:46:02.502848Z",
+"modified": "2017-04-25T21:46:02.502901Z",
+"name": "Stadtmitte",
+"fullName": "Stadtmitte"
+
+Um sich den Blick in die VVS-App für die nächste Ubahn-Abfahrt zu sparen, wird eine VVS-Abfahrtsanzeige in den Spiegel integriert. Das Modul "MMM-vvsDeparture" zeigt alle nächsten Abfahrten (keine Verbindungen). 
+\subsection{Diashow}
+Im Handel gibt es bereits Bildschirme in Größe eines Tablets, die automatisch eine Diashow ablaufen lassen. Diese Funktion soll mit dem Spiegel kombiniert werden. Dazu gibt es das Modul "MMM-ImageSlideshow". 
+Diese Modul bietet einige Parameter, die zur Personalisierung dienen. 
+Zum Einen können Bilder von verschiedenen Dateitypen eingebunden werden: validImageFileExtensions: 'bmp,jpg,gif,png'. Zum Anderen können die Bilder in Größe und Farbe geändert werden. Außerdem ist es möglich, Bilder aus mehreren Ordnern abzuspielen, deren Reihenfolge zufällig zu wählen und die Geschwindigkeit mit der die Bilder abgespielt werden, anzupassen. 
+Größe im Default lassen -> nicht verzogen?!?!!
 
 
 
+.js DAtei:
 
+getDom: function () {
+	var wrapper = document.createElement("div");
+
+ if (this.config.makeImagesGrayscale)
+image.className = "desaturate";
+
+if (this.config.setAsWallpaper)
+image.className = "wallpaper";
+
+.css Datei:
+
+
+
+\subsection{Profil-Wechsler mit Knopfdruck}
+Wie in der Hinführung bereits erwähnt, haben alle Module verschiedene Stellenwerte für die Benutzer. Deshalb ist es sinnvoll Profile anzulegen, die auf Wunsch gewechselt werden können. In dieser Studienarbeit wird eine vereinfachte Methode dafür verwendet, die im 6. Semester ausgebaut wird. Die Methode kombiniert die beiden Module $"MMM-Button"$ und "MMM-ProfileSwitcher".
+Zunächst zur Implementierung des Druckknopfes. 
+Mithilfe des Moduls "MMM-Button" wird ein Druckknopf in das System mit eingebunden. Der Knopf wird folgendermaßen angeschlossen:
+<Bild>
+Um zu überprüfen, ob der Druckknopf korrekt angeschlossen ist, wird folgender Pythoncode über den Befehl <Befehl> im Terminal des Raspberry Pis ausgeführt. 
+<python listing>
+Wird der Druckknopf betätigt, erscheint "Button pressed" in der Konsole.  
+Das Button-Modul wird in die config-Datei eingefügt:
+<config code>
+
+Beim Drücken des Knopfes, soll eine Broadcast-Nachricht mit dem Inhalt $"Button_PRESSED"$ versendet werden, welche die anderen Module anspricht. 
+Zunächst wird nur die Funktionalität des Button-Moduls getestet, wozu die Konsole des Magic Mirror beobachtet wird: Das Modul wird geladen, jedoch wird beim Drücken des Knopfes keine Broadcast-Nachricht gesendet. Wie eine Error-Mledung im Logfile zeigt, ist der grund dafür das fehlende Modul "Onoff", das gesondert installiert werden muss. 
+Nach der Installation des Onoff-Moduls tritt ein Error beim Starten des Magic Mirrors auf: "Version mismatch: expected 50 got 48". Dieses Problem ist ein häufig diskutierter Fehler im Magic Mirror Forum. Das Problem liegt in der Version von Node, die gegen eine andere Version von Epoll compiliert wird. was ist epoll? was ist node?
+
+Lösung ausprobieren!!! https://github.com/paviro/MMM-PIR-Sensor/issues/28 ganz unten
+
+
+Erklärung aller Elemente: https://github.com/MichMich/MagicMirror/tree/master/modules
+
+/boot config.txt: $display_rotate=1$
 
 
 \chapter{Ergebnisse}
