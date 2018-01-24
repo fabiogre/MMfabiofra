@@ -100,13 +100,12 @@ Zunächst wird die Reposetory des master branches\footnote{Hauptdatei des Magicm
 MagicMirror$^2$ ist eine open source platform für Entwickler von Smartmirror Spiegeln. Auf dieser Plattform können Anregungen für Projekte deren Umsetzung und installierbare Module frei zugänglich und offen diskutierbar ausgetauscht werden. $\text{MM}^{2}$ basiert auf einem Modul plug-in System, welches das Entwicklungstool Electron als sogenanntes application wrapper nutzt 
 \subsubsection{Implementieren des MM Betriebssystems}
 \textit{Greco}
-Mit den neusten Updates des applicationsframework rund um MM ist es möglich einen Raspberry Pi 2 oder 3 zu nutzen. Für eine manuelle Installation müssen folgende befehle im Command Prompt ein:
+Mit den neusten Updates des Applicationsframework rund um MM ist es möglich einen Raspberry Pi 2 oder 3 zu nutzen. Für eine manuelle Installation müssen folgende befehle im Command Prompt eingegeben werden:
  
  \begin{itemize}
- \item adfhadföl
-	% \item git clone https://github.com/MichMich/MagicMirror
-	%\item cd ~/MagicMirror
-	%\item npm install \&\& npm start
+	\item git clone https://github.com/MichMich/MagicMirror
+	\item cd ~/MagicMirror
+	\item npm install $\&\&$ npm start
  \end{itemize}
 \textbf{Erläuterung:}
 Zunächst wird die Reposetory des master branches\footnote{Hauptdatei des Magicmirrors} über einen Clonebefehl auf den Raspberry Pi geladen. Ist dieser Vorgang erfolgreich abgeschlossen worden, wechselt man in den nun neu erstellten Ordner und installiert und führt die Applikation mit dem Javascript zugehörigen Befehl npm aus 
@@ -126,6 +125,19 @@ Für die automatische Installation kann folgender Befehl in der Konsole des Pis 
 
 
 \section{Module}
+Ein Modul am Magicmirror anwenden:
+
+Sobald man das Magicmirror2 Betriebssystem installiert hat, ist es möglich die MagicMirror Applikation zu starten. Sofern keine weiteren Einstellungen vorgenommen wurden, gibt es neun bereits vordefinierte sogenannte „default modules“, welche direkt nach dem Start ausgeführt werden.  
+Alle Module die der Spiegel im Betrieb verwenden soll, müssen in der Datei config.js eingefügt und mit den richtigen Optionen konfiguriert werden. Die Konfigurationsdatei befindet sich im Ordner MagicMirror/config/config.js und kann jederzeit mittels Texteditor bearbeitet werden.
+\subsection{alert}
+Das Alarm Modul ist das erste installierte default Modul und besitzt die Fähigkeit Brodcastnachrichten von anderen Modulen sogenannte „notifications“ auf dem Spiegel anzuzeigen. Um dieses Modul zu aktivieren wird innerhalb der Datei Config.js im \"modules\"-Bereich folgendes eingetragen:
+\begin{figure}[h!]
+	\centering
+		\includegraphics{C:/Users/fabiogr/MMfabiofra/alert1.PNG}
+	\label{fig:alert1}
+\end{figure}
+
+
 \textit{Greco}
 
 
